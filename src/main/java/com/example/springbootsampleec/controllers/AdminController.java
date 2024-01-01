@@ -38,6 +38,7 @@ public class AdminController {
         @AuthenticationPrincipal(expression = "user") User user,
         Model model
     ) {
+    	
         List<Item> items = itemService.findAll();
         model.addAttribute("user", user);
         model.addAttribute("items", items);
