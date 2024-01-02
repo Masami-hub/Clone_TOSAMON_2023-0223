@@ -32,8 +32,6 @@ public class AdminController {
     ) {
         this.itemService = itemService;
     }
-    
-    
     @GetMapping("/admin")    
     public String admin(
         @AuthenticationPrincipal(expression = "user") User user,
