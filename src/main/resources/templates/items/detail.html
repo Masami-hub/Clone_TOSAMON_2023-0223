@@ -217,14 +217,14 @@
                 <div class="col-12">
                     <h4 class="subheading text-center">みんなのレビュー</h4>
                 </div>
-				<div th:each="eachReview : ${reviews}">
-                    <div class="col-10" style="background:white;">
+				<div class="mb-4" style="background:white; width: 1000px; padding: 15px;">
+                   <div th:each="eachReview : ${reviews}" class="border-bottom mb-3 pb-3">
                         <div class="row">
-                            <div class="col-3 border-right">
+                            <div class="col-md-4 border-right">
 								<p>[[ ${eachReview.getUserName} ]] さん</p>
 								<p>[[ ${eachReview.star} ]]</p>
 							</div>
-                            <div class="col-9">	                               
+                            <div class="col-md-8">	                               
 								<p>[[ ${eachReview.comment} ]]</p>
 								<p>[[ ${eachReview.createdAt} ]]</p>
                             </div>
@@ -243,7 +243,6 @@
     </footer>
 </div>
 <script src="/src/main/resources/static/JS/script.js"></script>
-
 
 </body>
 </html>
