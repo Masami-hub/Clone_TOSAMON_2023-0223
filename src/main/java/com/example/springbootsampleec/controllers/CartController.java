@@ -213,4 +213,5 @@ public class CartController {
 	        model.addAttribute("user", user);
 	        return "carts/purchased";  	    	
 	    }
+	    
 }
