@@ -196,6 +196,7 @@ public class CartController {
 	    	itemId.setStock(checkStock+presentAmountSize);//カートから商品が削除されたら在庫が増える
 	    	cartService.delete(id);
 	        return "redirect:/cart/"+ user.getId(); 
+	        
 	    }
 	    
 	  //購入完了
