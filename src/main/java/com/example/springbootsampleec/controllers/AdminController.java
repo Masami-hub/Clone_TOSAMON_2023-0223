@@ -32,12 +32,12 @@ public class AdminController {
     ) {
         this.itemService = itemService;
     }
-    
     @GetMapping("/admin")    
     public String admin(
         @AuthenticationPrincipal(expression = "user") User user,
         Model model
     ) {
+    	
         List<Item> items = itemService.findAll();
         model.addAttribute("user", user);
         model.addAttribute("items", items);

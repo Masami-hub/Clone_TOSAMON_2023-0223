@@ -28,6 +28,7 @@ import com.example.springbootsampleec.services.UserService;
 @RequestMapping("/cart")
 @Controller
 public class CartController {
+	
 	//各テーブルのサービスを利用できるように
 	private final CartService cartService;
 	private final ItemService itemService;
@@ -195,6 +196,7 @@ public class CartController {
 	    	itemId.setStock(checkStock+presentAmountSize);//カートから商品が削除されたら在庫が増える
 	    	cartService.delete(id);
 	        return "redirect:/cart/"+ user.getId(); 
+	        
 	    }
 	    
 	  //購入完了
@@ -213,4 +215,5 @@ public class CartController {
 	        model.addAttribute("user", user);
 	        return "carts/purchased";  	    	
 	    }
+	    
 }

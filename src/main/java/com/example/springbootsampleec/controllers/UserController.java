@@ -34,6 +34,7 @@ public class UserController {
 	private final ReviewService reviewService;
 	private final ShopService shopService;
     
+	
     public UserController(
     	UserService userService,
     	ItemService itemService,
@@ -159,7 +160,10 @@ public class UserController {
         redirectAttributes.addFlashAttribute(
             "successMessage",
             "レビューの更新が完了しました");
-        return "redirect:/users/review/" + user.getId();
+
+        redirectAttributes.addAttribute("userId", user.getId());
+        return "redirect:/users/review/{userId}";
+       // return "redirect:/users/review/{id}";
     }
     
     @GetMapping("/review/delete/{id}")    
